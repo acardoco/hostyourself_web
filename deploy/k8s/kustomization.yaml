@@ -12,4 +12,4 @@ resources:
 images:
   - name: hostyourself
     newName: ghcr.io/acardoco/hostyourself_web
-    newTag: initial
+    newTag: latest
