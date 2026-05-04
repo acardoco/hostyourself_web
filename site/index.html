@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HostYourself | Compra bien tu NAS, miniPC o homelab</title>
+  <meta name="description" content="Recomendaciones de compra para montar tu nube privada en casa: NAS, miniPC, k3s, Immich, Jellyfin, Nextcloud, AdGuard Home y Home Assistant." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hostyourself.khazadlab.es/" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="HostYourself inicio">
+      <span class="brand-mark">HY</span>
+      <span>
+        <strong>HostYourself</strong>
+        <small>by KhazadLab</small>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#recomendador">Recomendador</a>
+      <a href="#comprar">Qué comprar</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#mantenimiento">Mantenimiento</a>
+      <a class="nav-cta" href="#contacto">Pedir presupuesto</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">NAS, miniPCs y homelabs llave en mano</p>
+        <h1>Compra bien tu nube privada. Yo te ayudo a montarla.</h1>
+        <p class="hero-text">Elige tu nivel técnico, presupuesto y servicios. Te recomiendo una base realista para fotos, archivos, multimedia, backups, DNS privado, domótica o un cluster k3s.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#recomendador">Usar recomendador</a>
+          <a class="button ghost" href="#comprar">Ver equipos recomendados</a>
+        </div>
+        <p class="affiliate-note" id="affiliate-disclosure">Algunos enlaces pueden ser de afiliado. No encarecen el precio para ti y ayudan a mantener el proyecto. Solo recomiendo equipos que usaría para ese caso.</p>
+      </div>
+      <aside class="hero-card">
+        <h2>La idea</h2>
+        <p>No vendo hosting barato. Te ayudo a elegir hardware y montar tu propio servidor en casa: documentado, con backups y acceso remoto seguro.</p>
+        <ul class="check-list">
+          <li>Hardware comprado por ti</li>
+          <li>Instalación cerrada y documentada</li>
+          <li>Soporte inicial opcional</li>
+          <li>Mantenimiento mensual si lo necesitas</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section compact" id="recomendador">
+      <div class="section-heading">
+        <p class="eyebrow">Configurador</p>
+        <h2>Encuentra la base adecuada</h2>
+        <p>Esto no sustituye un presupuesto final, pero te da una dirección clara: NAS, miniPC o cluster.</p>
+      </div>
+
+      <div class="wizard">
+        <div class="panel">
+          <h3>1. Nivel técnico</h3>
+          <div class="segmented" role="group" aria-label="Nivel técnico">
+            <label><input type="radio" name="level" value="cero-tecnico" checked> <span>Cero técnico</span></label>
+            <label><input type="radio" name="level" value="algo-tecnico"> <span>Algo técnico</span></label>
+            <label><input type="radio" name="level" value="experto"> <span>Experto</span></label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>2. Presupuesto</h3>
+          <div class="segmented" role="group" aria-label="Presupuesto">
+            <label><input type="radio" name="budget" value="basico" checked> <span>Básico</span></label>
+            <label><input type="radio" name="budget" value="medio"> <span>Medio</span></label>
+            <label><input type="radio" name="budget" value="escalable"> <span>Escalable</span></label>
+          </div>
+        </div>
+
+        <div class="panel wide">
+          <h3>3. Qué quieres alojar</h3>
+          <div class="service-grid" id="service-picker">
+            <label><input type="checkbox" value="fotos" checked> <span>Fotos con Immich</span></label>
+            <label><input type="checkbox" value="archivos"> <span>Archivos / Nextcloud</span></label>
+            <label><input type="checkbox" value="jellyfin"> <span>Media: Jellyfin</span></label>
+            <label><input type="checkbox" value="arr-stack"> <span>Jellyseerr/Sonarr/Radarr/qBittorrent</span></label>
+            <label><input type="checkbox" value="adguard"> <span>DNS privado: AdGuard Home</span></label>
+            <label><input type="checkbox" value="homeassistant"> <span>Home Assistant</span></label>
+            <label><input type="checkbox" value="vaultwarden"> <span>Vaultwarden</span></label>
+            <label><input type="checkbox" value="paperless"> <span>Paperless-ngx</span></label>
+            <label><input type="checkbox" value="servidores-juegos"> <span>Servidores de juegos</span></label>
+            <label><input type="checkbox" value="monitorizacion"> <span>Monitorización</span></label>
+            <label><input type="checkbox" value="backups" checked> <span>Backups</span></label>
+            <label><input type="checkbox" value="k3s"> <span>Cluster k3s / Proxmox</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card" id="recommendation-result" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="comprar">
+      <div class="section-heading">
+        <p class="eyebrow">Recomendaciones de compra</p>
+        <h2>Equipos recomendados por caso de uso</h2>
+        <!-- <p>Los enlaces están centralizados en <code>site/data/products.json</code> y <code>site/data/affiliate-links.json</code>. Cambias el link ahí y se actualiza toda la web.</p> -->
+      </div>
+
+      <div class="filters" aria-label="Filtros de productos">
+        <button class="filter active" data-filter="all">Todo</button>
+        <button class="filter" data-filter="nas">NAS</button>
+        <button class="filter" data-filter="minipc">MiniPC</button>
+        <button class="filter" data-filter="cluster">Cluster</button>
+        <button class="filter" data-filter="accessory">Accesorios</button>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="section split" id="servicios">
+      <div>
+        <p class="eyebrow">Servicios</p>
+        <h2>Qué puedo montar</h2>
+        <p>La compra del hardware es solo el primer paso. El valor está en dejarlo funcionando, seguro, documentado y con backups.</p>
+      </div>
+      <div class="cards three">
+        <article class="service-card">
+          <h3>Diagnóstico</h3>
+          <p class="price">39 €</p>
+          <p>Llamada de 45–60 min, necesidades, hardware recomendado, arquitectura y presupuesto cerrado.</p>
+        </article>
+        <article class="service-card">
+          <h3>Setup NAS / nube privada</h3>
+          <p class="price">desde 499 €</p>
+          <p>Fotos, archivos, acceso remoto, usuarios, backups y documentación para uso familiar o profesional pequeño.</p>
+        </article>
+        <article class="service-card">
+          <h3>Mini servidor / homelab</h3>
+          <p class="price">desde 799 €</p>
+          <p>Docker, Immich, Jellyfin, Nextcloud, AdGuard, Home Assistant, monitorización y soporte inicial.</p>
+        </article>
+        <article class="service-card">
+          <h3>Homelab avanzado</h3>
+          <p class="price">desde 1.499 €</p>
+          <p>k3s o Proxmox, varios nodos, GitOps, dominio, monitorización, backups y documentación técnica.</p>
+        </article>
+        <article class="service-card">
+          <h3>Media server</h3>
+          <p class="price">desde 300 €</p>
+          <p>Jellyfin, Jellyseerr, Sonarr, Radarr, qBittorrent, permisos, almacenamiento y acceso seguro.</p>
+        </article>
+        <article class="service-card">
+          <h3>Seguridad básica</h3>
+          <p class="price">desde 150 €</p>
+          <p>AdGuard Home, VPN/Tailscale, hardening básico, exposición mínima, alertas y revisión de backups.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="mantenimiento">
+      <div class="section-heading">
+        <p class="eyebrow">Soporte y mantenimiento</p>
+        <h2>Después del montaje, tú eliges</h2>
+        <p>Incluyo soporte inicial limitado. Si quieres que revise el sistema periódicamente, se puede contratar mantenimiento.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h3>Básico</h3>
+          <p class="price">desde 39 €/mes</p>
+          <ul>
+            <li>Revisión mensual</li>
+            <li>Comprobación de backups</li>
+            <li>Actualizaciones menores</li>
+            <li>Soporte por email</li>
+          </ul>
+        </article>
+        <article class="pricing-card featured">
+          <h3>Plus</h3>
+          <p class="price">desde 79 €/mes</p>
+          <ul>
+            <li>Monitorización básica</li>
+            <li>1 hora mensual de cambios</li>
+            <li>Revisión de seguridad</li>
+            <li>Soporte prioritario</li>
+          </ul>
+        </article>
+        <article class="pricing-card">
+          <h3>Pro</h3>
+          <p class="price">desde 149 €/mes</p>
+          <ul>
+            <li>Monitorización avanzada</li>
+            <li>Parches y mantenimiento</li>
+            <li>2 horas mensuales</li>
+            <li>Plan de evolución</li>
+          </ul>
+        </article>
+      </div>
+      <p class="small-print">Sin disponibilidad 24/7. Hardware roto, visitas, ampliaciones y recuperación por manipulación incorrecta se presupuestan aparte.</p>
+    </section>
+
+    <!-- <section class="section split muted" id="gestion">
+      <div>
+        <p class="eyebrow">Gestión sencilla</p>
+        <h2>Cambia enlaces sin tocar la web</h2>
+      </div>
+      <div class="howto">
+        <ol>
+          <li>Edita <code>site/data/products.json</code> para cambiar productos, textos o URLs.</li>
+          <li>Edita <code>site/data/affiliate-links.json</code> para cambiar tu Store ID de Amazon, Awin u otras redes.</li>
+          <li>Haz commit en GitHub.</li>
+          <li>Lanza la Action manual de release o deja que Flux despliegue el cambio.</li>
+        </ol>
+        <p>La web añade automáticamente <code>tag=andreto12-21</code> a enlaces de Amazon.es y construye enlaces UGREEN con tu link de Awin.</p>
+      </div>
+    </section> -->
+
+    <section class="section contact" id="contacto">
+      <div>
+        <p class="eyebrow">Presupuesto</p>
+        <h2>¿Quieres que te lo monte?</h2>
+        <p>Cuéntame qué quieres guardar, cuántos usuarios sois, si quieres fotos, multimedia, domótica, backups o cluster. Te respondo con una propuesta cerrada.</p>
+      </div>
+      <a class="button primary large" id="contact-button" href="mailto:andres.cardosoc12@gmail.com?subject=Presupuesto%20HostYourself&body=Hola%2C%20quiero%20un%20presupuesto%20para%20montar%20mi%20nube%20privada%2Fhomelab.%0A%0ANivel%20t%C3%A9cnico%3A%0APresupuesto%3A%0AServicios%20que%20quiero%3A%0AHardware%20que%20ya%20tengo%3A%0AComentarios%3A">Pedir presupuesto</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>HostYourself by KhazadLab</strong>
+      <p>hostyourself.khazadlab.es</p>
+    </div>
+    <div class="footer-links">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="#top">Volver arriba</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

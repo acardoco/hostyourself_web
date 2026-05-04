@@ -1,0 +1,40 @@
+{
+  "site": {
+    "domain": "hostyourself.khazadlab.es",
+    "brand": "HostYourself",
+    "contactEmail": "andres.cardosoc12@gmail.com",
+    "amazonStoreId": "andreto12-21",
+    "disclosure": "Como Afiliado de Amazon, puedo obtener ingresos por compras adscritas. Algunos enlaces pueden ser de afiliado; no encarecen el precio para ti y ayudan a mantener este proyecto."
+  },
+  "networks": {
+    "amazon-es": {
+      "type": "amazon",
+      "tag": "andreto12-21",
+      "label": "Amazon.es"
+    },
+    "ugreen-awin": {
+      "type": "awin",
+      "label": "UGREEN vía Awin",
+      "baseUrl": "https://www.awin1.com/cread.php?awinmid=90851&awinaffid=2880015",
+      "template": "https://www.awin1.com/cread.php?awinmid=90851&awinaffid=2880015&ued={encodedUrl}"
+    },
+    "direct": {
+      "type": "direct",
+      "label": "Web oficial"
+    },
+    "manual": {
+      "type": "manual",
+      "label": "Link pendiente"
+    }
+  },
+  "defaults": {
+    "buttonText": "Ver equipo",
+    "quoteSubject": "Presupuesto HostYourself"
+  },
+  "notes": [
+    "Edita este archivo cuando caduque un enlace o cambies de programa de afiliados.",
+    "Para Amazon, añade enlaces normales de amazon.es y la web les añadirá automáticamente ?tag=andreto12-21.",
+    "Para UGREEN, usa network=ugreen-awin y productUrl con la URL final del producto. La web construirá el link de Awin con ued=URL_ENCODED.",
+    "No pongas precios fijos de Amazon salvo que los saques por API oficial y los mantengas actualizados."
+  ]
+}
