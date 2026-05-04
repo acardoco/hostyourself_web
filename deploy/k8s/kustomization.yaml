@@ -11,10 +11,5 @@ resources:
 
 images:
   - name: hostyourself
-<<<<<<< HEAD
     newName: ghcr.io/acardoco/hostyourself
     newTag: initial
-=======
-    newName: ghcr.io/acardoco/hostyourself_web
-    newTag: latest
->>>>>>> f50a50133e8250521d7d9ad1ffcb408b10657766
